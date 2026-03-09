@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		CAF126402E6D5DD60071834F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAF126262E6D5DD40071834F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF1262D2E6D5DD40071834F;
+			remoteInfo = AminoBar;
+		};
+		CAF1264A2E6D5DD60071834F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAF126262E6D5DD40071834F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF1262D2E6D5DD40071834F;
+			remoteInfo = AminoBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CAF1262E2E6D5DD40071834F /* AminoBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AminoBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF1263F2E6D5DD60071834F /* AminoBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AminoBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF126492E6D5DD60071834F /* AminoBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AminoBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CAF126302E6D5DD40071834F /* AminoBar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AminoBar;
+			sourceTree = "<group>";
+		};
+		CAF126422E6D5DD60071834F /* AminoBarTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AminoBarTests;
+			sourceTree = "<group>";
+		};
+		CAF1264C2E6D5DD60071834F /* AminoBarUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AminoBarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CAF1262B2E6D5DD40071834F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF1263C2E6D5DD60071834F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF126462E6D5DD60071834F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CAF126252E6D5DD40071834F = {
+			isa = PBXGroup;
+			children = (
+				CAF126302E6D5DD40071834F /* AminoBar */,
+				CAF126422E6D5DD60071834F /* AminoBarTests */,
+				CAF1264C2E6D5DD60071834F /* AminoBarUITests */,
+				CAF1262F2E6D5DD40071834F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CAF1262F2E6D5DD40071834F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAF1262E2E6D5DD40071834F /* AminoBar.app */,
+				CAF1263F2E6D5DD60071834F /* AminoBarTests.xctest */,
+				CAF126492E6D5DD60071834F /* AminoBarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CAF1262D2E6D5DD40071834F /* AminoBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF126532E6D5DD60071834F /* Build configuration list for PBXNativeTarget "AminoBar" */;
+			buildPhases = (
+				CAF1262A2E6D5DD40071834F /* Sources */,
+				CAF1262B2E6D5DD40071834F /* Frameworks */,
+				CAF1262C2E6D5DD40071834F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CAF126302E6D5DD40071834F /* AminoBar */,
+			);
+			name = AminoBar;
+			packageProductDependencies = (
+			);
+			productName = AminoBar;
+			productReference = CAF1262E2E6D5DD40071834F /* AminoBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CAF1263E2E6D5DD60071834F /* AminoBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF126562E6D5DD60071834F /* Build configuration list for PBXNativeTarget "AminoBarTests" */;
+			buildPhases = (
+				CAF1263B2E6D5DD60071834F /* Sources */,
+				CAF1263C2E6D5DD60071834F /* Frameworks */,
+				CAF1263D2E6D5DD60071834F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAF126412E6D5DD60071834F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CAF126422E6D5DD60071834F /* AminoBarTests */,
+			);
+			name = AminoBarTests;
+			packageProductDependencies = (
+			);
+			productName = AminoBarTests;
+			productReference = CAF1263F2E6D5DD60071834F /* AminoBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CAF126482E6D5DD60071834F /* AminoBarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF126592E6D5DD60071834F /* Build configuration list for PBXNativeTarget "AminoBarUITests" */;
+			buildPhases = (
+				CAF126452E6D5DD60071834F /* Sources */,
+				CAF126462E6D5DD60071834F /* Frameworks */,
+				CAF126472E6D5DD60071834F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAF1264B2E6D5DD60071834F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CAF1264C2E6D5DD60071834F /* AminoBarUITests */,
+			);
+			name = AminoBarUITests;
+			packageProductDependencies = (
+			);
+			productName = AminoBarUITests;
+			productReference = CAF126492E6D5DD60071834F /* AminoBarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAF126262E6D5DD40071834F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					CAF1262D2E6D5DD40071834F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					CAF1263E2E6D5DD60071834F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = CAF1262D2E6D5DD40071834F;
+					};
+					CAF126482E6D5DD60071834F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = CAF1262D2E6D5DD40071834F;
+					};
+				};
+			};
+			buildConfigurationList = CAF126292E6D5DD40071834F /* Build configuration list for PBXProject "AminoBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CAF126252E6D5DD40071834F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CAF1262F2E6D5DD40071834F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAF1262D2E6D5DD40071834F /* AminoBar */,
+				CAF1263E2E6D5DD60071834F /* AminoBarTests */,
+				CAF126482E6D5DD60071834F /* AminoBarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAF1262C2E6D5DD40071834F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF1263D2E6D5DD60071834F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF126472E6D5DD60071834F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAF1262A2E6D5DD40071834F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF1263B2E6D5DD60071834F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF126452E6D5DD60071834F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CAF126412E6D5DD60071834F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF1262D2E6D5DD40071834F /* AminoBar */;
+			targetProxy = CAF126402E6D5DD60071834F /* PBXContainerItemProxy */;
+		};
+		CAF1264B2E6D5DD60071834F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF1262D2E6D5DD40071834F /* AminoBar */;
+			targetProxy = CAF1264A2E6D5DD60071834F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CAF126512E6D5DD60071834F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CAF126522E6D5DD60071834F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		CAF126542E6D5DD60071834F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AminoBar/AminoBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AminoBar/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = QPG.AminoBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CAF126552E6D5DD60071834F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AminoBar/AminoBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AminoBar/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = QPG.AminoBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CAF126572E6D5DD60071834F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = QPG.AminoBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AminoBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AminoBar";
+			};
+			name = Debug;
+		};
+		CAF126582E6D5DD60071834F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = QPG.AminoBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AminoBar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AminoBar";
+			};
+			name = Release;
+		};
+		CAF1265A2E6D5DD60071834F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = QPG.AminoBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = AminoBar;
+			};
+			name = Debug;
+		};
+		CAF1265B2E6D5DD60071834F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = QPG.AminoBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = AminoBar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CAF126292E6D5DD40071834F /* Build configuration list for PBXProject "AminoBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF126512E6D5DD60071834F /* Debug */,
+				CAF126522E6D5DD60071834F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAF126532E6D5DD60071834F /* Build configuration list for PBXNativeTarget "AminoBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF126542E6D5DD60071834F /* Debug */,
+				CAF126552E6D5DD60071834F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAF126562E6D5DD60071834F /* Build configuration list for PBXNativeTarget "AminoBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF126572E6D5DD60071834F /* Debug */,
+				CAF126582E6D5DD60071834F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAF126592E6D5DD60071834F /* Build configuration list for PBXNativeTarget "AminoBarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF1265A2E6D5DD60071834F /* Debug */,
+				CAF1265B2E6D5DD60071834F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CAF126262E6D5DD40071834F /* Project object */;
+}
