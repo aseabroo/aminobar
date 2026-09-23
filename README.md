@@ -1,25 +1,44 @@
 # AminoBar
 
-A small macOS menu bar study tool for looking up amino acids, written in SwiftUI.
+A lightweight macOS menu-bar study tool for quickly reviewing the 20 standard amino acids, built with SwiftUI.
 
-The source includes the 20 standard amino acids, one- and three-letter codes, group filters, short study notes, approximate side-chain pKa values, and clipboard actions. The data is stored locally in `ContentView.swift`.
+AminoBar is intentionally small: it keeps amino-acid reference data one click away without turning a study lookup into a full browser or note-taking workflow.
 
-## Current status
+## Features
 
-Early prototype. The Xcode project targets macOS 15.0. A clean build still needs work: both `AminoBarApp.swift` and `ContentView.swift` declare the app entry point, and the starter app references a `ContentView` type that is no longer defined. The test target still contains an empty example test.
+- all 20 standard amino acids
+- one- and three-letter codes
+- biochemical group filters
+- name/code/group search
+- concise study-oriented side-chain notes
+- approximate side-chain pKa values where useful
+- one-click clipboard actions
+- keyboard-assisted lookup and copying
+- native SwiftUI `MenuBarExtra` interface
 
-## Explore the project
+## Project structure
 
-Open `AminoBar/AminoBar.xcodeproj` in Xcode on a Mac.
+- [AminoBarApp.swift](AminoBar/AminoBar/AminoBarApp.swift) — macOS menu-bar application entry point
+- [ContentView.swift](AminoBar/AminoBar/ContentView.swift) — model data, filtering logic, and SwiftUI interface
+- [AminoBarTests.swift](AminoBar/AminoBarTests/AminoBarTests.swift) — data/search/filter tests
+- [AminoBar.xcodeproj](AminoBar/AminoBar.xcodeproj) — Xcode project targeting macOS 15
 
-- [ContentView.swift](AminoBar/AminoBar/ContentView.swift): amino acid data, menu bar interface, search, and filters.
-- [AminoBarApp.swift](AminoBar/AminoBar/AminoBarApp.swift): original app entry point.
-- [AminoBarTests.swift](AminoBar/AminoBarTests/AminoBarTests.swift): starting point for tests.
+## Run locally
 
-## Next steps
+Open `AminoBar/AminoBar.xcodeproj` in Xcode on macOS and run the `AminoBar` scheme.
 
-1. Consolidate the app entry point and verify the build in Xcode.
-2. Check keyboard shortcuts and the About window.
-3. Add a real screenshot and small tests for search and group filtering.
+The repository has been cleaned up from the original prototype so there is a single application entry point and testable filtering logic. The current automated tests cover the amino-acid dataset, search, group filtering, combined filtering, and whitespace handling.
 
-The study notes and pKa values are approximate; check them against course materials.
+## Study-data note
+
+The descriptions are concise study aids rather than a biochemical reference work. Side-chain pKa values are approximate and environment-dependent; verify course-specific values and terminology against the material being studied.
+
+## Portfolio role
+
+AminoBar is a compact native-app project demonstrating Swift, SwiftUI, macOS menu-bar UI, state-driven filtering, clipboard integration, keyboard interaction, and small-unit testing.
+
+It is deliberately narrower than larger portfolio applications: the goal is a focused utility that does one study task well.
+
+## Status
+
+The source-level prototype cleanup is complete. A clean build should still be verified in Xcode on macOS before publishing a packaged release.

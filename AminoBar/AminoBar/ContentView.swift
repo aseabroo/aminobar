@@ -78,37 +78,26 @@ let AMINO_DATA: [AminoAcid] = [
     .init(name: "Arginine", three: "Arg", one: "R", group: .basicStrong, traits: "Guanidinium; very basic", sideChainPka: "≈12.5"),
 ]
 
-// MARK: - App
 
-@main
-struct AminoBarApp: App {
-    @State private var showAbout = false
+func filterAminoAcids(
+    _ aminoAcids: [AminoAcid],
+    query: String,
+    group: AminoAcid.Group?
+) -> [AminoAcid] {
+    let normalizedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
 
-    var body: some Scene {
-        MenuBarExtra("AminoBar", systemImage: "testtube.2") {
-            AminoPanel()
-                .frame(width: 380)
-                .padding(.vertical, 8)
+    return aminoAcids
+        .filter { aminoAcid in
+            let matchesGroup = group == nil || aminoAcid.group == group
+            let matchesQuery = normalizedQuery.isEmpty
+                || aminoAcid.name.localizedCaseInsensitiveContains(normalizedQuery)
+                || aminoAcid.three.localizedCaseInsensitiveContains(normalizedQuery)
+                || aminoAcid.one.localizedCaseInsensitiveContains(normalizedQuery)
+                || aminoAcid.group.rawValue.localizedCaseInsensitiveContains(normalizedQuery)
 
-            Divider()
-            Button("About AminoBar…") { showAbout = true }
-            Button("Quit AminoBar") { NSApplication.shared.terminate(nil) }
+            return matchesGroup && matchesQuery
         }
-        .menuBarExtraStyle(.window)
-
-        Window("About AminoBar", id: "about") {
-            AboutView()
-                .frame(width: 420, height: 260)
-        }
-        .defaultPosition(.center)
-        .defaultSize(width: 420, height: 260)
-        .commands {
-            CommandGroup(replacing: .find) {
-                Button("Focus Search", action: FocusSearchCenter.shared.focusSearch)
-                    .keyboardShortcut("f", modifiers: [.command])
-            }
-        }
-    }
+        .sorted { $0.name < $1.name }
 }
 
 // MARK: - Focus Search bridge (simple)
@@ -131,16 +120,7 @@ struct AminoPanel: View {
     @State private var copyConfirmation: String?
 
     private var filtered: [AminoAcid] {
-        AMINO_DATA
-            .filter { aa in
-                (selectedFilter == nil || aa.group == selectedFilter!)
-                &&
-                (query.isEmpty || aa.name.localizedCaseInsensitiveContains(query)
-                 || aa.three.localizedCaseInsensitiveContains(query)
-                 || aa.one.localizedCaseInsensitiveContains(query)
-                 || aa.group.rawValue.localizedCaseInsensitiveContains(query))
-            }
-            .sorted { $0.name < $1.name }
+        filterAminoAcids(AMINO_DATA, query: query, group: selectedFilter)
     }
 
     var body: some View {
