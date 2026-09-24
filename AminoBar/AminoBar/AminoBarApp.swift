@@ -14,12 +14,6 @@ struct AminoBarApp: App {
         }
         .defaultPosition(.center)
         .defaultSize(width: 420, height: 260)
-        .commands {
-            CommandGroup(replacing: .find) {
-                Button("Focus Search", action: FocusSearchCenter.shared.focusSearch)
-                    .keyboardShortcut("f", modifiers: [.command])
-            }
-        }
     }
 }
 

@@ -91,17 +91,6 @@ let AMINO_DATA: [AminoAcid] = [
     .init(name: "Arginine", three: "Arg", one: "R", group: .basicStrong, traits: "Guanidinium; very basic", sideChainPka: "≈12.5"),
 ]
 
-// MARK: - Focus Search bridge (simple)
-
-final class FocusSearchCenter {
-    static let shared = FocusSearchCenter()
-    private init() {}
-
-    // Not truly global; it focuses the search field when the popover is open.
-    var focusAction: (() -> Void)?
-    func focusSearch() { focusAction?() }
-}
-
 // MARK: - Views
 
 struct AminoPanel: View {
@@ -116,11 +105,6 @@ struct AminoPanel: View {
     var body: some View {
         VStack(spacing: 10) {
             SearchBar(text: $query)
-                .onAppear {
-                    FocusSearchCenter.shared.focusAction = {
-                        NotificationCenter.default.post(name: .focusAminoSearch, object: nil)
-                    }
-                }
 
             FilterChips(selected: $selectedFilter)
 
@@ -297,8 +281,6 @@ struct FilterChip: View {
 
 // MARK: - Search Bar
 
-extension Notification.Name { static let focusAminoSearch = Notification.Name("focusAminoSearch") }
-
 struct SearchBar: View {
     @Binding var text: String
     @FocusState private var isFocused: Bool
@@ -310,9 +292,7 @@ struct SearchBar: View {
             TextField("Search name / 1‑ or 3‑letter / group", text: $text)
                 .textFieldStyle(.plain)
                 .focused($isFocused)
-                .onReceive(NotificationCenter.default.publisher(for: .focusAminoSearch)) { _ in
-                    isFocused = true
-                }
+                .onAppear { isFocused = true }
             if !text.isEmpty {
                 Button {
                     text = ""
