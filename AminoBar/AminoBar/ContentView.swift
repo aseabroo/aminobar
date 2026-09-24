@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - Data Model
 
 struct AminoAcid: Identifiable, Hashable {
-    let id = UUID()
+    var id: String { one }
     let name: String
     let three: String
     let one: String
@@ -54,6 +54,19 @@ struct AminoAcid: Identifiable, Hashable {
     }
 }
 
+extension AminoAcid {
+    static func search(_ acids: [AminoAcid], query: String, group: Group?) -> [AminoAcid] {
+        let query = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        return acids.filter { acid in
+            (group == nil || acid.group == group) &&
+            (query.isEmpty || acid.name.localizedCaseInsensitiveContains(query)
+             || acid.three.localizedCaseInsensitiveContains(query)
+             || acid.one.localizedCaseInsensitiveContains(query)
+             || acid.group.rawValue.localizedCaseInsensitiveContains(query))
+        }.sorted { $0.name < $1.name }
+    }
+}
+
 // Canonical set (concise, study‑oriented notes). pKa values are approximate.
 let AMINO_DATA: [AminoAcid] = [
     .init(name: "Glycine", three: "Gly", one: "G", group: .nonpolarAliphatic, traits: "Small, flexible; no side chain", sideChainPka: nil),
@@ -78,80 +91,20 @@ let AMINO_DATA: [AminoAcid] = [
     .init(name: "Arginine", three: "Arg", one: "R", group: .basicStrong, traits: "Guanidinium; very basic", sideChainPka: "≈12.5"),
 ]
 
-// MARK: - App
-
-@main
-struct AminoBarApp: App {
-    @State private var showAbout = false
-
-    var body: some Scene {
-        MenuBarExtra("AminoBar", systemImage: "testtube.2") {
-            AminoPanel()
-                .frame(width: 380)
-                .padding(.vertical, 8)
-
-            Divider()
-            Button("About AminoBar…") { showAbout = true }
-            Button("Quit AminoBar") { NSApplication.shared.terminate(nil) }
-        }
-        .menuBarExtraStyle(.window)
-
-        Window("About AminoBar", id: "about") {
-            AboutView()
-                .frame(width: 420, height: 260)
-        }
-        .defaultPosition(.center)
-        .defaultSize(width: 420, height: 260)
-        .commands {
-            CommandGroup(replacing: .find) {
-                Button("Focus Search", action: FocusSearchCenter.shared.focusSearch)
-                    .keyboardShortcut("f", modifiers: [.command])
-            }
-        }
-    }
-}
-
-// MARK: - Focus Search bridge (simple)
-
-final class FocusSearchCenter {
-    static let shared = FocusSearchCenter()
-    private init() {}
-
-    // Not truly global; it focuses the search field when the popover is open.
-    var focusAction: (() -> Void)?
-    func focusSearch() { focusAction?() }
-}
-
 // MARK: - Views
 
 struct AminoPanel: View {
     @State private var query = ""
     @State private var selectedFilter: AminoAcid.Group? = nil
-    @State private var selection: AminoAcid.ID?
     @State private var copyConfirmation: String?
 
     private var filtered: [AminoAcid] {
-        AMINO_DATA
-            .filter { aa in
-                (selectedFilter == nil || aa.group == selectedFilter!)
-                &&
-                (query.isEmpty || aa.name.localizedCaseInsensitiveContains(query)
-                 || aa.three.localizedCaseInsensitiveContains(query)
-                 || aa.one.localizedCaseInsensitiveContains(query)
-                 || aa.group.rawValue.localizedCaseInsensitiveContains(query))
-            }
-            .sorted { $0.name < $1.name }
+        AminoAcid.search(AMINO_DATA, query: query, group: selectedFilter)
     }
 
     var body: some View {
         VStack(spacing: 10) {
             SearchBar(text: $query)
-                .onAppear {
-                    FocusSearchCenter.shared.focusAction = {
-                        // Hacky but fine in a small tool: update a focus state in SearchBar via Notification
-                        NotificationCenter.default.post(name: .focusAminoSearch, object: nil)
-                    }
-                }
 
             FilterChips(selected: $selectedFilter)
 
@@ -159,12 +112,11 @@ struct AminoPanel: View {
                 ContentUnavailableView("No results", systemImage: "magnifyingglass", description: Text("Try a different name, code, or group."))
                     .frame(maxWidth: .infinity, minHeight: 120)
             } else {
-                List(selection: $selection) {
+                List {
                     ForEach(filtered) { aa in
                         AminoRow(aa: aa) {
                             copyToPasteboard(aa)
                         }
-                        .tag(aa.id)
                     }
                 }
                 .listStyle(.inset)
@@ -179,7 +131,7 @@ struct AminoPanel: View {
             }
 
             HStack {
-                Text("Tips: ⌘F to focus search · ↩︎ copies 1‑letter · ⌥↩︎ copies 3‑letter")
+                Text("Tap a row to copy its 1-letter code; right-click for more options.")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                 Spacer()
@@ -192,18 +144,6 @@ struct AminoPanel: View {
             .padding(.horizontal, 4)
         }
         .padding(.horizontal, 10)
-        .onReceive(NotificationCenter.default.publisher(for: NSEvent.keyDownNotification)) { note in
-            guard let event = note.object as? NSEvent else { return }
-            if event.keyCode == 36 /* Return */ {
-                if let first = filtered.first(where: { $0.id == selection }) ?? filtered.first {
-                    if event.modifierFlags.contains(.option) {
-                        copy(text: first.three, banner: first.three)
-                    } else {
-                        copy(text: first.one, banner: first.one)
-                    }
-                }
-            }
-        }
     }
 
     private func copyToPasteboard(_ aa: AminoAcid) {
@@ -341,8 +281,6 @@ struct FilterChip: View {
 
 // MARK: - Search Bar
 
-extension Notification.Name { static let focusAminoSearch = Notification.Name("focusAminoSearch") }
-
 struct SearchBar: View {
     @Binding var text: String
     @FocusState private var isFocused: Bool
@@ -354,9 +292,7 @@ struct SearchBar: View {
             TextField("Search name / 1‑ or 3‑letter / group", text: $text)
                 .textFieldStyle(.plain)
                 .focused($isFocused)
-                .onReceive(NotificationCenter.default.publisher(for: .focusAminoSearch)) { _ in
-                    isFocused = true
-                }
+                .onAppear { isFocused = true }
             if !text.isEmpty {
                 Button {
                     text = ""
@@ -374,7 +310,6 @@ struct SearchBar: View {
             RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .strokeBorder(Color.secondary.opacity(0.25), lineWidth: 1)
         )
-        .keyboardShortcut("f", modifiers: [.command]) // when panel is open
     }
 }
 

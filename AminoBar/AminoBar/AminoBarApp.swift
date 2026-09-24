@@ -1,17 +1,31 @@
-//
-//  AminoBarApp.swift
-//  AminoBar
-//
-//  Created by Augustus Seabrooke on 9/7/25.
-//
-
 import SwiftUI
 
 @main
 struct AminoBarApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra("AminoBar", systemImage: "testtube.2") {
+            AminoMenu()
         }
+        .menuBarExtraStyle(.window)
+
+        Window("About AminoBar", id: "about") {
+            AboutView()
+                .frame(width: 420, height: 260)
+        }
+        .defaultPosition(.center)
+        .defaultSize(width: 420, height: 260)
+    }
+}
+
+private struct AminoMenu: View {
+    @Environment(\.openWindow) private var openWindow
+
+    var body: some View {
+        AminoPanel()
+            .frame(width: 380)
+            .padding(.vertical, 8)
+        Divider()
+        Button("About AminoBar…") { openWindow(id: "about") }
+        Button("Quit AminoBar") { NSApplication.shared.terminate(nil) }
     }
 }

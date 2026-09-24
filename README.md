@@ -1,25 +1,15 @@
 # AminoBar
 
-A small macOS menu bar study tool for looking up amino acids, written in SwiftUI.
+A small macOS 15+ menu-bar study tool for looking up the 20 standard amino acids. It has local data, name/code/group search, group filters, short notes, approximate side-chain pKa values and clipboard actions.
 
-The source includes the 20 standard amino acids, one- and three-letter codes, group filters, short study notes, approximate side-chain pKa values, and clipboard actions. The data is stored locally in `ContentView.swift`.
+## Run and test
 
-## Current status
+Open `AminoBar/AminoBar.xcodeproj` in Xcode on a Mac. Select the AminoBar scheme and run the app. Open the menu-bar icon, type a name, one-letter code, three-letter code or group, and optionally choose a filter. Click a row to copy its one-letter code; right-click for additional copy choices. “About AminoBar…” opens the About window. Run the `AminoBarTests` target from Xcode to verify data uniqueness, stable identifiers and search/filter behavior.
 
-Early prototype. The Xcode project targets macOS 15.0. A clean build still needs work: both `AminoBarApp.swift` and `ContentView.swift` declare the app entry point, and the starter app references a `ContentView` type that is no longer defined. The test target still contains an empty example test.
+## Status and sources
 
-## Explore the project
+The duplicate `@main` and missing root view have been repaired. The app builds and its focused data/search tests pass in [macOS CI](https://github.com/aseabroo/aminobar/actions/workflows/mac-test.yml). Interactive menu-bar behavior, clipboard behavior, About-window behavior and a representative screenshot still need a manual Mac check; CI has not verified those interactions.
 
-Open `AminoBar/AminoBar.xcodeproj` in Xcode on a Mac.
+The one- and three-letter names/codes can be checked against the [IUPAC-IUB amino-acid nomenclature table](https://iupac.qmul.ac.uk/AminoAcid/tab1.html). For introductory structures and approximate ionizable side-chain pKa values, see [OpenStax Organic Chemistry §26.1](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Organic_Chemistry_%28OpenStax%29/26%3A_Biomolecules-_Amino_Acids_Peptides_and_Proteins/26.01%3A_Structures_of_Amino_Acids). Notes are concise study cues, not a controlled medical or biochemical reference; pKa depends on chemical environment.
 
-- [ContentView.swift](AminoBar/AminoBar/ContentView.swift): amino acid data, menu bar interface, search, and filters.
-- [AminoBarApp.swift](AminoBar/AminoBar/AminoBarApp.swift): original app entry point.
-- [AminoBarTests.swift](AminoBar/AminoBarTests/AminoBarTests.swift): starting point for tests.
-
-## Next steps
-
-1. Consolidate the app entry point and verify the build in Xcode.
-2. Check keyboard shortcuts and the About window.
-3. Add a real screenshot and small tests for search and group filtering.
-
-The study notes and pKa values are approximate; check them against course materials.
+The original code and app concept are by Augustus Seabrooke; this cleanup was AI-assisted. The app is build-tested in macOS CI, with the manual UI check above outstanding.
