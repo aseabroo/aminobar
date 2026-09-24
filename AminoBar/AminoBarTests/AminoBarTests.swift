@@ -12,7 +12,7 @@ struct AminoBarTests {
     @Test func searchAndGroupIntersect() {
         let found = AminoAcid.search(AMINO_DATA, query: "  gLu  ", group: .acidic)
         #expect(found.map(\.one) == ["E"])
-        #expect(AminoAcid.search(AMINO_DATA, query: "gLu", group: .polarAmide).isEmpty)
+        #expect(AminoAcid.search(AMINO_DATA, query: "gLu", group: .basicStrong).isEmpty)
         #expect(AminoAcid.search(AMINO_DATA, query: "zzzz", group: nil).isEmpty)
     }
 
