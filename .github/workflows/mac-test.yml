@@ -1,0 +1,9 @@
+name: macOS build and tests
+on: [push, pull_request]
+jobs:
+  xcode:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test
+        run: xcodebuild -project AminoBar/AminoBar.xcodeproj -scheme AminoBar -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO test
