@@ -8,8 +8,8 @@ Open `AminoBar/AminoBar.xcodeproj` in Xcode on a Mac. Select the AminoBar scheme
 
 ## Status and sources
 
-The duplicate `@main` and missing root view have been repaired, and the search/filter operation has focused unit tests. A macOS Xcode build, UI interaction and screenshot still need verification on a Mac; Linux cannot compile SwiftUI/AppKit. No screenshot or successful Mac run is claimed here.
+The duplicate `@main` and missing root view have been repaired. The app builds and its focused data/search tests pass in [macOS CI](https://github.com/aseabroo/aminobar/actions/workflows/mac-test.yml). Interactive menu-bar behavior, clipboard behavior, About-window behavior and a representative screenshot still need a manual Mac check; CI has not verified those interactions.
 
 The one- and three-letter names/codes can be checked against the [IUPAC-IUB amino-acid nomenclature table](https://iupac.qmul.ac.uk/AminoAcid/tab1.html). For introductory structures and approximate ionizable side-chain pKa values, see [OpenStax Organic Chemistry §26.1](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Organic_Chemistry_%28OpenStax%29/26%3A_Biomolecules-_Amino_Acids_Peptides_and_Proteins/26.01%3A_Structures_of_Amino_Acids). Notes are concise study cues, not a controlled medical or biochemical reference; pKa depends on chemical environment.
 
-The original code and app concept are by Augustus Seabrooke; this cleanup was AI-assisted and requires the Mac verification above before calling the app build-tested.
+The original code and app concept are by Augustus Seabrooke; this cleanup was AI-assisted. The app is build-tested in macOS CI, with the manual UI check above outstanding.
